@@ -31,26 +31,16 @@
     <a class="btn btn-danger btn-lg" href="/" role="button">Home Page</a>
   </div>
   <!-- CURRENT RESERVATIONS -->
-  <div class="card mb-3 mx-5" style="width: 40rem;">
+  <div class="card mb-3 mx-5 reservation" style="width: 40rem;">
     <div class="card-header">
       CURRENT RESERVATIONS
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Table #1</li>
-      <li class="list-group-item">Table #2</li>
-      <li class="list-group-item">Table #3</li>
-    </ul>
   </div>
   <!-- WAITING LIST -->
-  <div class="card mb-3 mx-5" style="width: 40rem;">
+  <div class="card mb-3 mx-5 waitlist" style="width: 40rem;">
     <div class="card-header">
       WAITING LIST
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">#1</li>
-      <li class="list-group-item">#2</li>
-      <li class="list-group-item">#3</li>
-    </ul>
   </div>
   <!-- script type="text/javascript">
     // Question: What does this code do?
@@ -87,4 +77,32 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"
   ></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script>
+    $.get('/api/tables', (reserves) => {
+      console.log(reserves);
+      reserves.forEach((reserve) => {
+        const html = `<ul class="list-group list-group-flush">
+      <li class="list-group-item">${reserve.customerName}</li>
+      <li class="list-group-item">${reserve.phoneNumber}</li>
+      <li class="list-group-item">${reserve.customerEmail}</li>
+    </ul>`;
+
+        $('.reservation').append(html);
+      });
+    });
+
+    $.get('/api/waitlist', (waitlists) => {
+      console.log(waitlists);
+      waitlists.forEach((waitlist) => {
+        const html = `<ul class="list-group list-group-flush">
+      <li class="list-group-item">${waitlist.customerName}</li>
+      <li class="list-group-item">${waitlist.phoneNumber}</li>
+      <li class="list-group-item">${waitlist.customerEmail}</li>
+    </ul>`;
+
+        $('.waitlist').append(html);
+      });
+    });
+  </script>
 </html>
