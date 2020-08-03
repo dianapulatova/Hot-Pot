@@ -24,7 +24,7 @@ app.get('/reserve', function (req, res) {
   res.sendFile(path.join(__dirname, 'make-res.html'));
 });
 
-app.post('/reserve', function (req, res) {
+app.post('/apis/reserve', function (req, res) {
   const newReserve = req.body;
   reservations.push(newReserve);
   res.json(reservations);
