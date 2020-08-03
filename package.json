@@ -1,0 +1,23 @@
+{
+  "name": "Hot-Pot",
+  "version": "1.0.0",
+  "description": "Hot Restaurant Homepage",
+  "main": "server,.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dianapulatova/Hot-Pot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dianapulatova/Hot-Pot/issues"
+  },
+  "homepage": "https://github.com/dianapulatova/Hot-Pot#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
