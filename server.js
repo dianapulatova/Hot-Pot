@@ -43,7 +43,7 @@ app.get('/', function (req, res) {
 });
 //reservations === GET/reservation html then POST
 app.get('/reserve', function (req, res) {
-  res.sendFile(path.join(__dirname, 'resevation.html'));
+  res.sendFile(path.join(__dirname, 'make-res.html'));
 });
 
 app.post('/reserve', function (req, res) {
@@ -53,7 +53,7 @@ app.post('/reserve', function (req, res) {
 });
 //waitlist === GET/waitlist html
 app.get('/tables', function (req, res) {
-  res.sendFile(path.join(__dirname, 'waitlist.html'));
+  res.sendFile(path.join(__dirname, 'view-tables.html'));
 });
 
 app.get('/api/tables', function (req, res) {
